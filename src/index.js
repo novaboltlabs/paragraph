@@ -92,18 +92,18 @@ class Paragraph {
    * @private
    */
   drawView() {
-    let div = document.createElement('DIV');
+    let paragraph = document.createElement('P');
 
-    div.classList.add(this._CSS.wrapper, this._CSS.block);
-    div.contentEditable = false;
-    div.dataset.placeholder = this.api.i18n.t(this._placeholder);
+    paragraph.classList.add(this._CSS.wrapper, this._CSS.block);
+    paragraph.contentEditable = false;
+    paragraph.dataset.placeholder = this.api.i18n.t(this._placeholder);
 
     if (!this.readOnly) {
-      div.contentEditable = true;
-      div.addEventListener('keyup', this.onKeyUp);
+      paragraph.contentEditable = true;
+      paragraph.addEventListener('keyup', this.onKeyUp);
     }
 
-    return div;
+    return paragraph;
   }
 
   /**
